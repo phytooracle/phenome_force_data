@@ -55,6 +55,7 @@ def main():
     """Download, uncompress, and remove tar here"""
 
     args = get_args()
+    os.chdir(args.download_dir)
     download_tar(args.data_path)
     file = os.path.basename(args.data_path)
     uncompress_tar(file)
