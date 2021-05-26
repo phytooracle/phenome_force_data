@@ -13,17 +13,13 @@ RUN apt-get update && apt-get install -y \
     gnupg \
     wget 
 
-#RUN wget https://files.renci.org/pub/irods/releases/4.1.10/ubuntu14/irods-icommands-4.1.10-ubuntu14-x86_64.deb \
-#    && apt-get install -y ./irods-icommands-4.1.10-ubuntu14-x86_64.deb
-RUN wget https://files.renci.org/pub/irods/releases/4.1.12/ubuntu14/irods-icommands-4.1.12-ubuntu14-x86_64.deb && \
-dpkg -i irods-icommands-4.1.12-ubuntu14-x86_64.deb && \
-rm irods-icommands-4.1.12-ubuntu14-x86_64.deb
+RUN wget https://files.renci.org/pub/irods/releases/4.1.10/ubuntu14/irods-icommands-4.1.10-ubuntu14-x86_64.deb \
+   && apt-get install -y ./irods-icommands-4.1.10-ubuntu14-x86_64.deb
 
 USER anonymous
 WORKDIR /home/anonymous
 
 RUN mkdir -p /home/anonymous/.irods
-
 
 RUN apt-get update
 RUN apt-get install -y python3.6-dev \
